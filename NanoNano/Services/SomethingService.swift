@@ -33,4 +33,14 @@ class SomethingService : ObservableObject{
             throw error
         }
     }
+    
+//    func fetchDetail(url: String) async throws -> PokemonResponseDetail -> {
+//        let url = URL(string: url)
+//        do {
+//            let response: PokemonResponse = try await service.fetch(PokemonResponse.self, url: url)
+//            return response
+//        } catch {
+//            throw error
+//        }
+//    }
 }

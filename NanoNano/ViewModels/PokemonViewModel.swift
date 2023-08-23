@@ -24,7 +24,7 @@ class PokemonViewModel: ObservableObject {
             print(error.localizedDescription)
         }
     }
-    
+
     func fetchDetailData(_ url: String) async throws{
         isLoading = true
         do{
