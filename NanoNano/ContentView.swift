@@ -35,6 +35,11 @@ struct ContentView: View {
             Task {
                 try await viewModel.fetchData()
             }
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+            Text("Hello, world!")
         }
         .padding()
     }

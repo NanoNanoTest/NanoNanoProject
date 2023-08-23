@@ -108,6 +108,8 @@
 				740928CE2A95B1660076CB9C /* SearchBarComponent.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
 		A25684BF2A95BBDB00AFACF5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
