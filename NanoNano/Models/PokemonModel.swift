@@ -15,3 +15,22 @@ struct PokemonModel: Codable {
     let name: String
     let url: String
 }
+
+struct PokemonDetailModel: Codable {
+    let id: Int
+    let name: String
+    let sprites: Sprites
+}
+
+struct Sprites: Codable {
+    let frontDefault: String
+    
+    enum CodingKeys: String, CodingKey {
+        case frontDefault = "front_default"
+    }
+    
+    init(frontDefault: String) {
+        self.frontDefault = frontDefault
+    }
+}
+

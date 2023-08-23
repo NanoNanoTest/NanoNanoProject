@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		740928CA2A95ACF40076CB9C /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740928C92A95ACF40076CB9C /* ItemListView.swift */; };
+		740928CC2A95AE450076CB9C /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740928CB2A95AE450076CB9C /* ItemDetailView.swift */; };
 		A25684BA2A95B52700AFACF5 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25684B92A95B52700AFACF5 /* Detail.swift */; };
 		A25684BC2A95BB7600AFACF5 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25684BB2A95BB7600AFACF5 /* PokemonModel.swift */; };
 		A25684BE2A95BBAB00AFACF5 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25684BD2A95BBAB00AFACF5 /* PokemonViewModel.swift */; };
@@ -42,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
+=======
+		740928C92A95ACF40076CB9C /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		740928CB2A95AE450076CB9C /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+>>>>>>> views
 		A25684B92A95B52700AFACF5 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		A25684BB2A95BB7600AFACF5 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
 		A25684BD2A95BBAB00AFACF5 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
@@ -87,6 +94,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
+=======
+		740928C82A95AC590076CB9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				740928C92A95ACF40076CB9C /* ItemListView.swift */,
+				740928CB2A95AE450076CB9C /* ItemDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+>>>>>>> views
 		A25684BF2A95BBDB00AFACF5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +137,7 @@
 		A62E092A2A95A6870023FA25 /* NanoNano */ = {
 			isa = PBXGroup;
 			children = (
+				740928C82A95AC590076CB9C /* Views */,
 				A62E09602A95A7B90023FA25 /* Models */,
 				A25684BF2A95BBDB00AFACF5 /* ViewModels */,
 				A62E095B2A95A73D0023FA25 /* Enums */,
@@ -325,6 +345,8 @@
 				A62E092E2A95A6870023FA25 /* ContentView.swift in Sources */,
 				A25684BA2A95B52700AFACF5 /* Detail.swift in Sources */,
 				A62E09622A95A7C80023FA25 /* ApiResponseModel.swift in Sources */,
+				740928CC2A95AE450076CB9C /* ItemDetailView.swift in Sources */,
+				740928CA2A95ACF40076CB9C /* ItemListView.swift in Sources */,
 				A62E095F2A95A78A0023FA25 /* SomethingService.swift in Sources */,
 				A62E092C2A95A6870023FA25 /* NanoNanoApp.swift in Sources */,
 				A25684BE2A95BBAB00AFACF5 /* PokemonViewModel.swift in Sources */,
