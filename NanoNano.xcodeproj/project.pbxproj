@@ -91,8 +91,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-<<<<<<< HEAD
-=======
 		740928C82A95AC590076CB9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +100,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
->>>>>>> views
 		A25684BF2A95BBDB00AFACF5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
