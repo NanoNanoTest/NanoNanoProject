@@ -12,3 +12,5 @@ struct APIResponseModel<T: Codable>: Codable {
     let status: String
     let data: T
 }
+
+
