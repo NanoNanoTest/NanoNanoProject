@@ -14,6 +14,11 @@
 		A62E093D2A95A6880023FA25 /* NanoNanoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E093C2A95A6880023FA25 /* NanoNanoTests.swift */; };
 		A62E09472A95A6880023FA25 /* NanoNanoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E09462A95A6880023FA25 /* NanoNanoUITests.swift */; };
 		A62E09492A95A6880023FA25 /* NanoNanoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E09482A95A6880023FA25 /* NanoNanoUITestsLaunchTests.swift */; };
+		A62E09572A95A6F40023FA25 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E09562A95A6F40023FA25 /* ApiService.swift */; };
+		A62E095A2A95A7180023FA25 /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E09592A95A7180023FA25 /* ApiProtocol.swift */; };
+		A62E095D2A95A7470023FA25 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E095C2A95A7470023FA25 /* ApiError.swift */; };
+		A62E095F2A95A78A0023FA25 /* SomethingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E095E2A95A78A0023FA25 /* SomethingService.swift */; };
+		A62E09622A95A7C80023FA25 /* ApiResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E09612A95A7C80023FA25 /* ApiResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		A62E09422A95A6880023FA25 /* NanoNanoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NanoNanoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62E09462A95A6880023FA25 /* NanoNanoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoNanoUITests.swift; sourceTree = "<group>"; };
 		A62E09482A95A6880023FA25 /* NanoNanoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoNanoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A62E09562A95A6F40023FA25 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		A62E09592A95A7180023FA25 /* ApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
+		A62E095C2A95A7470023FA25 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		A62E095E2A95A78A0023FA25 /* SomethingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomethingService.swift; sourceTree = "<group>"; };
+		A62E09612A95A7C80023FA25 /* ApiResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,10 @@
 		A62E092A2A95A6870023FA25 /* NanoNano */ = {
 			isa = PBXGroup;
 			children = (
+				A62E09602A95A7B90023FA25 /* Models */,
+				A62E095B2A95A73D0023FA25 /* Enums */,
+				A62E09582A95A6FD0023FA25 /* Protocols */,
+				A62E09552A95A6E70023FA25 /* Services */,
 				A62E092B2A95A6870023FA25 /* NanoNanoApp.swift */,
 				A62E092D2A95A6870023FA25 /* ContentView.swift */,
 				A62E092F2A95A6880023FA25 /* Assets.xcassets */,
@@ -125,6 +139,39 @@
 				A62E09482A95A6880023FA25 /* NanoNanoUITestsLaunchTests.swift */,
 			);
 			path = NanoNanoUITests;
+			sourceTree = "<group>";
+		};
+		A62E09552A95A6E70023FA25 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A62E09562A95A6F40023FA25 /* ApiService.swift */,
+				A62E095E2A95A78A0023FA25 /* SomethingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A62E09582A95A6FD0023FA25 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A62E09592A95A7180023FA25 /* ApiProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A62E095B2A95A73D0023FA25 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A62E095C2A95A7470023FA25 /* ApiError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		A62E09602A95A7B90023FA25 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A62E09612A95A7C80023FA25 /* ApiResponseModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +304,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A62E095A2A95A7180023FA25 /* ApiProtocol.swift in Sources */,
 				A62E092E2A95A6870023FA25 /* ContentView.swift in Sources */,
+				A62E09622A95A7C80023FA25 /* ApiResponseModel.swift in Sources */,
+				A62E095F2A95A78A0023FA25 /* SomethingService.swift in Sources */,
 				A62E092C2A95A6870023FA25 /* NanoNanoApp.swift in Sources */,
+				A62E095D2A95A7470023FA25 /* ApiError.swift in Sources */,
+				A62E09572A95A6F40023FA25 /* ApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

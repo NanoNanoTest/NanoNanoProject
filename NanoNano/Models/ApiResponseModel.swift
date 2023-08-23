@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct APIResponseModel<T: Codable>: Codable {
+    let code: Int
+    let status: String
+    let data: T
+}
