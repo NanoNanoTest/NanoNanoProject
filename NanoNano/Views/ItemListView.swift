@@ -10,15 +10,18 @@ import SwiftUI
 struct ItemListView: View {
     
     @StateObject var viewModel: PokemonViewModel = .init()
-    @State var searchText = ""
+    @State var searchText: String = ""
+    var pokemons: [PokemonModel]{
+        return searchText.isEmpty ? viewModel.pokemons : viewModel.pokemons.filter({ pokemon in
+            pokemon.name.lowercased().contains(searchText.lowercased())
+        })
+    }
     
     var body: some View {
         NavigationStack{
             VStack{
-                SearchBarComponent(text: $searchText)
-                    .padding(.bottom, 16)
                 List{
-                    ForEach(viewModel.pokemons, id: \.url){pokemon in
+                    ForEach(pokemons, id: \.url){pokemon in
                         NavigationLink(value: pokemon.url){
                             Text(pokemon.name)
                         }
@@ -29,6 +32,7 @@ struct ItemListView: View {
                     ItemDetailView(url: value)
                 }
                 .navigationTitle("Home")
+                .searchable(text: $searchText)
             }
             .padding()
         }
