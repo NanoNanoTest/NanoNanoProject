@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A25684BA2A95B52700AFACF5 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25684B92A95B52700AFACF5 /* Detail.swift */; };
+		A25684BC2A95BB7600AFACF5 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25684BB2A95BB7600AFACF5 /* PokemonModel.swift */; };
+		A25684BE2A95BBAB00AFACF5 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25684BD2A95BBAB00AFACF5 /* PokemonViewModel.swift */; };
 		A62E092C2A95A6870023FA25 /* NanoNanoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E092B2A95A6870023FA25 /* NanoNanoApp.swift */; };
 		A62E092E2A95A6870023FA25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E092D2A95A6870023FA25 /* ContentView.swift */; };
 		A62E09302A95A6880023FA25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A62E092F2A95A6880023FA25 /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A25684B92A95B52700AFACF5 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		A25684BB2A95BB7600AFACF5 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
+		A25684BD2A95BBAB00AFACF5 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
 		A62E09282A95A6870023FA25 /* NanoNano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoNano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62E092B2A95A6870023FA25 /* NanoNanoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoNanoApp.swift; sourceTree = "<group>"; };
 		A62E092D2A95A6870023FA25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A25684BF2A95BBDB00AFACF5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A25684BD2A95BBAB00AFACF5 /* PokemonViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		A62E091F2A95A6870023FA25 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				A62E09602A95A7B90023FA25 /* Models */,
+				A25684BF2A95BBDB00AFACF5 /* ViewModels */,
 				A62E095B2A95A73D0023FA25 /* Enums */,
 				A62E09582A95A6FD0023FA25 /* Protocols */,
 				A62E09552A95A6E70023FA25 /* Services */,
@@ -112,6 +127,7 @@
 				A62E092D2A95A6870023FA25 /* ContentView.swift */,
 				A62E092F2A95A6880023FA25 /* Assets.xcassets */,
 				A62E09312A95A6880023FA25 /* Preview Content */,
+				A25684B92A95B52700AFACF5 /* Detail.swift */,
 			);
 			path = NanoNano;
 			sourceTree = "<group>";
@@ -170,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				A62E09612A95A7C80023FA25 /* ApiResponseModel.swift */,
+				A25684BB2A95BB7600AFACF5 /* PokemonModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,10 +323,13 @@
 			files = (
 				A62E095A2A95A7180023FA25 /* ApiProtocol.swift in Sources */,
 				A62E092E2A95A6870023FA25 /* ContentView.swift in Sources */,
+				A25684BA2A95B52700AFACF5 /* Detail.swift in Sources */,
 				A62E09622A95A7C80023FA25 /* ApiResponseModel.swift in Sources */,
 				A62E095F2A95A78A0023FA25 /* SomethingService.swift in Sources */,
 				A62E092C2A95A6870023FA25 /* NanoNanoApp.swift in Sources */,
+				A25684BE2A95BBAB00AFACF5 /* PokemonViewModel.swift in Sources */,
 				A62E095D2A95A7470023FA25 /* ApiError.swift in Sources */,
+				A25684BC2A95BB7600AFACF5 /* PokemonModel.swift in Sources */,
 				A62E09572A95A6F40023FA25 /* ApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

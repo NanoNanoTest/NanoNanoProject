@@ -14,13 +14,23 @@ class SomethingService : ObservableObject{
     }
     
     // aku pake string buat sementara aja, bisa generic tergantung nanti
-    func fetch() async throws -> APIResponseModel<String> {
-        let url = URL(string: "http://something.com")
+    func fetch() async throws -> PokemonResponse {
+        let url = URL(string: "https://pokeapi.co/api/v2/pokemon/")
         do {
-            let response: APIResponseModel<String> = try await service.fetch(APIResponseModel<String>.self, url: url)
+            let response: PokemonResponse = try await service.fetch(PokemonResponse.self, url: url)
             return response
         } catch {
             throw error
         }
     }
+    
+//    func fetchDetail(url: String) async throws -> PokemonResponseDetail -> {
+//        let url = URL(string: url)
+//        do {
+//            let response: PokemonResponse = try await service.fetch(PokemonResponse.self, url: url)
+//            return response
+//        } catch {
+//            throw error
+//        }
+//    }
 }
