@@ -31,10 +31,9 @@ struct ItemListView: View {
                 .navigationDestination(for: String.self) { value in
                     ItemDetailView(url: value)
                 }
-                .navigationTitle("Home")
+                .navigationTitle("Pokemon")
                 .searchable(text: $searchText)
             }
-            .padding()
         }
         .onAppear {
             Task {

@@ -15,7 +15,7 @@ class SomethingService : ObservableObject{
     
     // aku pake string buat sementara aja, bisa generic tergantung nanti
     func fetch() async throws -> PokemonResponse {
-        let url = URL(string: "https://pokeapi.co/api/v2/pokemon/")
+        let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=100")
         do {
             let response: PokemonResponse = try await service.fetch(PokemonResponse.self, url: url)
             return response
