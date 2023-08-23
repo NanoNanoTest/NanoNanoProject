@@ -7,8 +7,9 @@
 
 import Foundation
 
-class ContentViewModel: ObservableObject {
+class PokemonViewModel: ObservableObject {
     @Published var pokemons: [PokemonModel] = []
+    @Published var pokemonDetail: PokemonDetailModel?
     @Published var isLoading: Bool = false
     
     func fetchData() async throws {
@@ -17,6 +18,19 @@ class ContentViewModel: ObservableObject {
             let data = try await SomethingService().fetch()
             DispatchQueue.main.async {
                 self.pokemons = data.results
+                self.isLoading = false
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func fetchDetailData(_ url: String) async throws{
+        isLoading = true
+        do{
+            let data = try await SomethingService().fetchDetail(url: url)
+            DispatchQueue.main.async {
+                self.pokemonDetail = data
                 self.isLoading = false
             }
         } catch {

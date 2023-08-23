@@ -9,14 +9,24 @@ import SwiftUI
 
 struct ItemDetailView: View {
     
-    @State var name: String
+    @State var url: String
+    @StateObject var viewModel: PokemonViewModel = .init()
+    
     var body: some View {
-        Text(name)
+        VStack{
+            Text(viewModel.pokemonDetail?.name ?? "")
+            AsyncImage(url: URL(string: viewModel.pokemonDetail?.sprites.frontDefault ?? ""))
+        }
+        .onAppear(){
+            Task {
+                try await viewModel.fetchDetailData(_: url)
+            }
+        }
     }
 }
 
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemDetailView(name: "value")
+        ItemDetailView(url: "value")
     }
 }

@@ -11,8 +11,8 @@ struct Detail: View {
     let pokemon: PokemonModel
     var body: some View {
         Text(pokemon.name)
-            .task {
-                fetchDetail(pokemon.url)
-            }
+//            .task {
+//                fetchDetail(pokemon.url)
+//            }
     }
 }

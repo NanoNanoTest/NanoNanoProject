@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ItemListView: View {
+    
+    @StateObject var viewModel: PokemonViewModel = .init()
     @State var searchText = ""
     
     var body: some View {
@@ -16,19 +18,24 @@ struct ItemListView: View {
                 SearchBarComponent(text: $searchText)
                     .padding(.bottom, 16)
                 List{
-                    ForEach(0..<7){_ in
-                        NavigationLink(value: "abcd"){
-                            Text("abcd")
+                    ForEach(viewModel.pokemons, id: \.url){pokemon in
+                        NavigationLink(value: pokemon.url){
+                            Text(pokemon.name)
                         }
                     }
                 }
                 .listStyle(.inset)
                 .navigationDestination(for: String.self) { value in
-                    ItemDetailView(name: value)
+                    ItemDetailView(url: value)
                 }
                 .navigationTitle("Home")
             }
             .padding()
+        }
+        .onAppear {
+            Task {
+                try await viewModel.fetchData()
+            }
         }
     }
 }
