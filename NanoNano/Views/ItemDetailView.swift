@@ -15,7 +15,9 @@ struct ItemDetailView: View {
     var body: some View {
         VStack{
             Text(viewModel.pokemonDetail?.name ?? "")
-            AsyncImage(url: URL(string: viewModel.pokemonDetail?.sprites.frontDefault ?? ""))
+            AsyncImage(url: URL(string: viewModel.pokemonDetail?.sprites.frontDefault ?? ""),scale: 0.5)
+            AsyncImage(url: URL(string: viewModel.pokemonDetail?.sprites.backDefault ?? ""),scale: 0.5)
+            AsyncImage(url: URL(string: viewModel.pokemonDetail?.sprites.backDefault ?? ""),scale: 0.5)
         }
         .onAppear(){
             Task {

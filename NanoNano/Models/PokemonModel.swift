@@ -24,13 +24,20 @@ struct PokemonDetailModel: Codable {
 
 struct Sprites: Codable {
     let frontDefault: String
+    let backDefault: String
+    let frontShiny: String
     
     enum CodingKeys: String, CodingKey {
         case frontDefault = "front_default"
-    }
-    
-    init(frontDefault: String) {
-        self.frontDefault = frontDefault
+        case backDefault = "back_default"
+        case frontShiny = "front_shiny"
     }
 }
 
+struct PokemonGalerryModel: Decodable, Identifiable {
+    
+    let id: Int
+    let name: String
+    let imageUrl: String
+    let type: String
+}

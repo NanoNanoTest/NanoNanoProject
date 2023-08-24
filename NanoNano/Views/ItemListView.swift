@@ -11,35 +11,50 @@ struct ItemListView: View {
     
     @StateObject var viewModel: PokemonViewModel = .init()
     @State var searchText: String = ""
+    @State var isImageShowed: Bool = false
+    @State var url: String = ""
+    
+    
+    
     var pokemons: [PokemonModel]{
         return searchText.isEmpty ? viewModel.pokemons : viewModel.pokemons.filter({ pokemon in
             pokemon.name.lowercased().contains(searchText.lowercased())
         })
     }
-    
     var body: some View {
         NavigationStack{
             VStack{
-                List{
-                    ForEach(pokemons, id: \.url){pokemon in
-                        NavigationLink(value: pokemon.url){
-                            Text(pokemon.name)
+                if viewModel.isLoading {
+                    ProgressView()
+                        .controlSize(.large)
+                }else {
+                    ScrollView {
+                        ForEach(pokemons, id: \.url){ pokemon in
+                                NavigationLink(value: pokemon.url) {
+                                    Text(pokemon.name)
+                                }
+                            }
+                        .listStyle(.inset)
+                        .navigationDestination(for: String.self) { value in
+                            ItemDetailView(url: value)
                         }
+                        .navigationTitle("Pokemon")
+                        .searchable(text: $searchText)
+                        
                     }
                 }
-                .listStyle(.inset)
-                .navigationDestination(for: String.self) { value in
-                    ItemDetailView(url: value)
+ 
                 }
-                .navigationTitle("Pokemon")
-                .searchable(text: $searchText)
+            }.task {
+                do {
+                    try await viewModel.fetchData()
+                } catch {
+                    
+                }
+                    
+                
             }
-        }
-        .onAppear {
-            Task {
-                try await viewModel.fetchData()
-            }
-        }
+
     }
 }
 
