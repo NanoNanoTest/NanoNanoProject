@@ -12,6 +12,7 @@ struct NanoNanoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .accessibilityIdentifier("mainView")
         }
     }
 }

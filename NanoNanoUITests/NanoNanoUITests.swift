@@ -37,5 +37,5 @@ final class NanoNanoUITests: XCTestCase {
                 XCUIApplication().launch()
             }
         }
-    }
+    }   
 }

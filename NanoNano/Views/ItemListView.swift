@@ -23,38 +23,39 @@ struct ItemListView: View {
     }
     var body: some View {
         NavigationStack{
-            VStack{
+            VStack {
                 if viewModel.isLoading {
                     ProgressView()
                         .controlSize(.large)
-                }else {
+                        .accessibilityIdentifier("loadingIndicator")
+                } else {
                     ScrollView {
                         ForEach(pokemons, id: \.url){ pokemon in
-                                NavigationLink(value: pokemon.url) {
-                                    Text(pokemon.name)
-                                }
+                            NavigationLink(value: pokemon.url) {
+                                Text(pokemon.name)
+                                    .accessibilityIdentifier("pokemonName")
                             }
+                            .accessibilityIdentifier("navigationLink")
+                        }
                         .listStyle(.inset)
                         .navigationDestination(for: String.self) { value in
                             ItemDetailView(url: value)
                         }
                         .navigationTitle("Pokemon")
                         .searchable(text: $searchText)
-                        
+                        .autocorrectionDisabled(true)
+                        .accessibilityIdentifier("scrollViewItem")
                     }
+                    .accessibilityIdentifier("scrollView")
                 }
- 
-                }
-            }.task {
-                do {
-                    try await viewModel.fetchData()
-                } catch {
-                    
-                }
-                    
+            }
+        }.task {
+            do {
+                try await viewModel.fetchData()
+            } catch {
                 
             }
-
+        }.accessibilityIdentifier("navigationStack")
     }
 }
 
