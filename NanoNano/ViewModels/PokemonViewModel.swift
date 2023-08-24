@@ -22,8 +22,12 @@ class PokemonViewModel: ObservableObject{
         }
         do {
             let data = try await SomethingService().fetch()
-            self.pokemons = data.results
-            self.isLoading = false
+            if data.results.count > 0 {
+                DispatchQueue.main.async {
+                    self.pokemons = data.results
+                    self.isLoading = false
+                }
+            }
         } catch {
             print(error.localizedDescription)
         }
@@ -34,12 +38,9 @@ class PokemonViewModel: ObservableObject{
             self.isLoading = true
         }
         do{
-            let data = try await SomethingService().fetchDetail(url: url)
-            DispatchQueue.main.async {
-                self.pokemonDetail = data
-                self.isLoading = false
-                print(url)
-            }
+            let result = try await SomethingService().fetchDetail(url: url)
+            self.pokemonDetail = result
+            self.isLoading = false
         } catch {
             print(error.localizedDescription)
         }

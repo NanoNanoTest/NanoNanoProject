@@ -15,6 +15,7 @@ struct ItemDetailView: View {
     var body: some View {
         VStack{
             Text(viewModel.pokemonDetail?.name ?? "")
+                .accessibilityIdentifier("pokemonName")
             AsyncImage(url: URL(string: viewModel.pokemonDetail?.sprites.frontDefault ?? ""),scale: 0.5)
             AsyncImage(url: URL(string: viewModel.pokemonDetail?.sprites.backDefault ?? ""),scale: 0.5)
             AsyncImage(url: URL(string: viewModel.pokemonDetail?.sprites.backDefault ?? ""),scale: 0.5)
@@ -24,6 +25,7 @@ struct ItemDetailView: View {
                 try await viewModel.fetchDetailData(_: url)
             }
         }
+        .accessibilityIdentifier("itemDetailView")
     }
 }
 
