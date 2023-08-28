@@ -29,7 +29,8 @@ struct ItemListView: View {
                         .controlSize(.large)
                         .accessibilityIdentifier("loadingIndicator")
                 } else {
-                    ScrollView {
+                    //MARK: LIST
+                    List {
                         ForEach(pokemons, id: \.url){ pokemon in
                             NavigationLink(value: pokemon.url) {
                                 Text(pokemon.name)
@@ -37,6 +38,7 @@ struct ItemListView: View {
                             }
                             .accessibilityIdentifier("navigationLink")
                         }
+                        
                         .listStyle(.inset)
                         .navigationDestination(for: String.self) { value in
                             ItemDetailView(url: value)
@@ -45,7 +47,7 @@ struct ItemListView: View {
                         .searchable(text: $searchText)
                         .autocorrectionDisabled(true)
                         .accessibilityIdentifier("scrollViewItem")
-                    }
+                    }//: LIST
                     .accessibilityIdentifier("scrollView")
                 }
             }
